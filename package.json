@@ -1,6 +1,6 @@
 {
   "name": "koa-mocker-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "mock",
   "bin": {
     "mocker": "./lib/mocker.js"
@@ -9,9 +9,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yjh30/koa-mocker-cli.git"
+  },
+  "keywords": [
+    "mock",
+    "mocker"
+  ],
+  "author": "杨君华",
   "license": "ISC",
-  "devDependencies": {
+  "bugs": {
+    "url": "https://github.com/yjh30/koa-mocker-cli/issues"
+  },
+  "homepage": "https://github.com/yjh30/koa-mocker-cli#readme",
+  "dependencies": {
     "chalk": "^2.4.1",
     "chokidar": "^2.0.4",
     "commander": "^2.19.0",
