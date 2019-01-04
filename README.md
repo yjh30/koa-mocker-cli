@@ -26,7 +26,6 @@ mocker --port=3000 --watch=mock-data/ --gatewayPath=/api --gatewayServiceParamNa
 ## 示例
 ### 示例mock文件tree
 <img src="./images/mock_file_path.jpg" width="80%" align=center />
-<br/>  
 
 ### mock网关数据
 > 首先你需要在mock-data(根据命令行配置值)目录下建立api（根据命令行配置值）目录，然后创建你要mock数据的文件
