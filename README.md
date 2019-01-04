@@ -25,9 +25,7 @@ mocker --port=3000 --watch=mock-data/ --gatewayPath=/api --gatewayServiceParamNa
 
 ## 示例
 ### 示例mock文件tree
-<div style="width: 300px;">
-  <img src="./images/mock_file_path.jpg" width="100%" align=left />
-</div>
+<img src="./images/mock_file_path.jpg" width="320" height="223" align=left />
 <br/>
 
 ### mock网关数据
