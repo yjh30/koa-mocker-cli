@@ -71,17 +71,27 @@ module.exports = {
 访问localhost:3000/homework/list就能看到你mock的数据了
 ```js
 module.exports = {
-  'GET /homework/list': [
-    {
-      homeworkId: 1,
-      subjectId: 11,
+  'GET /homework/list': {
+    "data": {
+      "resultList": [
+        {
+          homeworkId: 1,
+          subjectId: 11,
+        },
+        {
+          homeworkId: 2,
+          subjectId: 22,
+        },
+      ]
     },
-    {
-      homeworkId: 2,
-      subjectId: 22,
-    },
-  ]
+    "message": "操作成功",
+    "success": true
+  }
 }
+
+// module.exports = {
+//   'GET /homework/list': 这里可以写任意类型值
+// }
 ```
 
 
@@ -89,7 +99,13 @@ module.exports = {
 访问localhost:3000/homework/count就能看到你mock的数据了
 ```js
 module.exports = {
-  'GET /homework/count': 100
+  'GET /homework/count': {
+    "data": {
+      "resultObject": 100
+    },
+    "message": "操作成功",
+    "success": true
+  }
 }
 ```
 
@@ -101,7 +117,7 @@ const subjectNames = ["语文", "数学", "英语", "物理", "化学", "生物"
 
 module.exports = {
   'GET /homework/list/random': function(ctx) {
-    const reponseData = Mock.mock({
+    const resultList = Mock.mock({
       "list|20": [
         {
           "homeworkId|+1": 1,
@@ -114,14 +130,20 @@ module.exports = {
       ]
     }).list
 
-    ctx.body = reponseData
+    ctx.body = {
+      data: {
+        resultList
+      },
+      message: "操作成功",
+      success: true
+    }
   }
 }
 
 // // 兼容express框架的写法
 // module.exports = {
-//   'GET /homework/list/random': function(req, res) {
-//     const reponseData = Mock.mock({
+//   'GET /homework/list/random': function(ctx) {
+//     const resultList = Mock.mock({
 //       "list|20": [
 //         {
 //           "homeworkId|+1": 1,
@@ -134,7 +156,13 @@ module.exports = {
 //       ]
 //     }).list
 
-//     res.json(reponseData)
+//     ctx.body = {
+//       data: {
+//         resultList
+//       },
+//       message: "操作成功",
+//       success: true
+//     }
 //   }
 // }
 ```
