@@ -3,7 +3,7 @@ const subjectNames = ["语文", "数学", "英语", "物理", "化学", "生物"
 
 module.exports = {
   'GET /homework/list/random': function(ctx) {
-    const reponseData = Mock.mock({
+    const resultList = Mock.mock({
       "list|20": [
         {
           "homeworkId|+1": 1,
@@ -16,6 +16,12 @@ module.exports = {
       ]
     }).list
 
-    ctx.body = reponseData
+    ctx.body = {
+      data: {
+        resultList
+      },
+      message: "操作成功",
+      success: true
+    }
   }
 }
