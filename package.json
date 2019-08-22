@@ -1,6 +1,6 @@
 {
   "name": "koa-mocker-cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "mock",
   "bin": {
     "mocker": "./lib/mocker.js"
